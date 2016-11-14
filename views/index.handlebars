@@ -1,0 +1,72 @@
+<h1>Burgers!</h1>
+
+<img src="http://www.clker.com/cliparts/h/8/q/L/j/b/burger-clip-md.png" class="center"/>
+
+<div class="content">
+
+<div class="theBurgerChoices">
+
+<h2 id="burgerChoices">So many choices!</h2>
+
+<ul id="burgerChoicesList">
+  {{#each burgers}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.name}}
+
+        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button type="submit">BURGER TIME!</button>
+        </form>
+
+        
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+</div>
+
+<div class="theDevouredChoices">
+
+<h2 id="devouredChoices">Burgers that are devoured!</h2>
+
+<ul id="devouredChoicesList">
+  {{#each burgers}}
+    {{#if this.devoured}}
+      <li>
+        {{this.name}}
+
+        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="false">
+          <button type="submit">EAT UP!</button>
+        </form>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+</div>
+
+</div>
+
+<div class="addBurger">
+
+<h2>Add a Burger</h2>
+<form class="create-update-form" action="burgers/create" method="POST">
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="slee">Devoured?</label><br>
+    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="devoured" value="0"> Not Devoured
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
+
+</div>

@@ -1,0 +1,57 @@
+body {
+	background-color: #ffcc66;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+
+.center {
+	margin: auto;
+    display: block;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+  margin: 5px;
+  padding: 5px;
+  text-align: left;
+}
+
+.theBurgerChoices {
+	width: 50%;
+	text-align: left;
+	float: left;
+}
+
+.theDevouredChoices {
+	width: 50%;
+	text-align: left;
+	float: left;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  margin: 5px;
+  padding: 5px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.addBurger {
+	width: 100%;
+	position: relative;
+	text-align: center;
+	float: left;
+}
+
+

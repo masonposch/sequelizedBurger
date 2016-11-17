@@ -27,6 +27,32 @@ Here is where you setup a model for how to interface with the database.
 
 module.exports = function(sequelize, DataTypes) {
 
-	var 
+	var burger = sequelize.define('Burger', {
+		
+		id: {
+			type: DataTypes.Integer,
+			autoIncrement: true,
+			primaryKey: true
+		},
+
+		name: {
+			type: DataTypes.String
+		},
+
+		devoured: {
+			type: DataTypes.Boolean,
+			default: false
+		}
+
+	})
+
+	return Burger;
 
 }
+
+
+
+
+
+
+
